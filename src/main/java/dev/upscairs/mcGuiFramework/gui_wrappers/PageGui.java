@@ -122,12 +122,12 @@ public class PageGui<E extends List<? extends ListableGuiObject>> extends Intera
     @Override
     public InventoryGui handleInvClick(int slot, ItemStack clickedItem, HumanEntity clickingPlayer) {
 
-        if(slot == 45) {
+        if(slot == 45 && page > 0) {
             setPage(page - 1);
             McGuiFramework.getGuiSounds().playClickSound(clickingPlayer);
             return this;
         }
-        else if(slot == 53) {
+        else if(slot == 53 && page < maxPage) {
             setPage(page + 1);
             McGuiFramework.getGuiSounds().playClickSound(clickingPlayer);
             return this;
