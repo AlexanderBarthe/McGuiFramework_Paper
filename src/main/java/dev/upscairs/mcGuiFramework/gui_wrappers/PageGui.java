@@ -79,6 +79,11 @@ public class PageGui<E extends List<? extends ListableGuiObject>> extends Intera
         }
     }
 
+    private void flushScrollItems() {
+        setItem(45, new ItemStack(Material.AIR));
+        setItem(53, new ItemStack(Material.AIR));
+    }
+
     /**
      *
      * Places items into gui.
@@ -87,6 +92,7 @@ public class PageGui<E extends List<? extends ListableGuiObject>> extends Intera
     public void placeItems() {
 
         flushListedItems();
+        flushScrollItems();
 
         if(page > 0) {
             setItem(45, generateScrollLeftItem());
