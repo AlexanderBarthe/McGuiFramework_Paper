@@ -162,13 +162,10 @@ public class PageGui<E extends List<? extends ListableGuiObject>> extends Intera
     @Override
     public void setTitle(String title) {
 
-        if(!showPageInTitle) {
-            super.setTitle(title);
-        }
-        else {
-            this.rawTitle = title;
-            super.setTitle(rawTitle + " (" + (page+1) + "/" + (maxPage+1) + ")");
-        }
+        this.rawTitle = title;
+
+        if(!showPageInTitle) super.setTitle(title);
+        else super.setTitle(rawTitle + " (" + (page+1) + "/" + (maxPage+1) + ")");
 
     }
 
